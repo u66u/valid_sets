@@ -215,7 +215,7 @@ export default function GameBoard() {
                                 }`}
                         >
                             <div
-                                dangerouslySetInnerHTML={{ __html: CardVisualizer.createSVG(card, true) }}
+                                dangerouslySetInnerHTML={{ __html: CardVisualizer.createSVG(card) }}
                                 className="mb-2"
                             />
                             <div className="text-center text-gray-600 font-medium">
@@ -258,7 +258,7 @@ export default function GameBoard() {
                         {game.deck.getCards().map((card, i) => (
                             <div key={i} className="bg-white p-2 rounded-lg shadow-sm">
                                 <div dangerouslySetInnerHTML={{
-                                    __html: CardVisualizer.createSVG(card, true)
+                                    __html: CardVisualizer.createSVG(card)
                                 }} />
                             </div>
                         ))}
@@ -288,7 +288,7 @@ export default function GameBoard() {
                                     <div className="flex gap-4">
                                         {set.cards.map((card, j) => (
                                             <div key={j} dangerouslySetInnerHTML={{
-                                                __html: CardVisualizer.createSVG(card, true)
+                                                __html: CardVisualizer.createSVG(card)
                                             }} />
                                         ))}
                                     </div>
@@ -307,7 +307,7 @@ export default function GameBoard() {
                         {game.deck.getDiscardPile().map((card, i) => (
                             <div key={i} className="bg-white p-2 rounded-lg shadow-sm">
                                 <div dangerouslySetInnerHTML={{
-                                    __html: CardVisualizer.createSVG(card, true)
+                                    __html: CardVisualizer.createSVG(card)
                                 }} />
                             </div>
                         ))}
