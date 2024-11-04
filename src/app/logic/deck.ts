@@ -1,20 +1,22 @@
-// deck.ts
-import { Card, PentagonLine } from './types';
+import { Card, PentagonLine } from "./types";
 
 export class Deck {
-    private cards: Card[] = [];
-    private discardPile: Card[] = [];  // Add discard pile
-  
-    constructor() {
-      this.generateDeck();
-    }
+  private cards: Card[] = [];
+  private discardPile: Card[] = [];
+
+  constructor() {
+    this.generateDeck();
+  }
 
   private generateDeck(): void {
-    // Generate all possible combinations of pentagon lines
     for (let light = 0; light < 5; light++) {
       for (let medium = 0; medium < 5; medium++) {
         for (let dark = 0; dark < 5; dark++) {
-          this.cards.push([light as PentagonLine, medium as PentagonLine, dark as PentagonLine]);
+          this.cards.push([
+            light as PentagonLine,
+            medium as PentagonLine,
+            dark as PentagonLine,
+          ]);
         }
       }
     }
@@ -43,11 +45,11 @@ export class Deck {
     return this.cards.length + this.discardPile.length;
   }
 
-public getCards(): Card[] {
-  return [...this.cards];
-}
+  public getCards(): Card[] {
+    return [...this.cards];
+  }
 
-public getDiscardPile(): Card[] {
-  return [...this.discardPile];
-}
+  public getDiscardPile(): Card[] {
+    return [...this.discardPile];
+  }
 }

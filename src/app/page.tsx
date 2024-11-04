@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-        <GameBoard />
+      <GameBoard />
     </HydrateClient>
   );
 }
