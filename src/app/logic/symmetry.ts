@@ -1,4 +1,4 @@
-import { Card, Set, SymmetryGroup } from "./types";
+import type { Card, Set, SymmetryGroup } from "./types";
 
 export class SymmetryChecker {
   private static sumMod5(numbers: number[]): number {
@@ -9,7 +9,7 @@ export class SymmetryChecker {
     if (cards.length !== 5) return false;
 
     for (let level = 0; level < 3; level++) {
-      const sum = this.sumMod5(cards.map((card) => card[level]));
+      const sum = this.sumMod5(cards.map((card) => card[level] as number));
       if (sum !== 0) return false;
     }
 

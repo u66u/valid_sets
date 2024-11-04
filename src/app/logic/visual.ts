@@ -1,4 +1,4 @@
-import { Card, Set } from "./types";
+import type { Card, Set } from "./types";
 
 export class CardVisualizer {
   public static createSVG(card: Card): string {

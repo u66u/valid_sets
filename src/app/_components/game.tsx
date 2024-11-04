@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { CsetGame } from "~/app/logic/game";
-import { Card, SymmetryGroup } from "~/app/logic/types";
+import type { Card } from "~/app/logic/types";
 import { CardVisualizer } from "~/app/logic/visual";
 import Modal from "./modal";
 import Toast from "./toast";
@@ -50,7 +50,7 @@ export default function GameBoard() {
         setSelectedCards(newSelected);
 
         if (newSelected.length === 5) {
-          const selectedSet = newSelected.map((i) => hand[i]);
+          const selectedSet = newSelected.map((i) => hand[i]!);
           const isValid = SymmetryChecker.isValidSet(selectedSet);
 
           setFlashingCards(newSelected);
@@ -227,7 +227,7 @@ export default function GameBoard() {
                 flashingCards.includes(i)
                   ? flashingCards.length === 5 &&
                     SymmetryChecker.isValidSet(
-                      flashingCards.map((idx) => hand[idx]),
+                      flashingCards.map((idx) => hand[idx]!)
                     )
                     ? "animate-flash-green"
                     : "animate-flash-red"

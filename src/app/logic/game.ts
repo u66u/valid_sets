@@ -1,4 +1,4 @@
-import { Card, SymmetryGroup } from "./types";
+import type { Card, SymmetryGroup } from "./types";
 import { Deck } from "./deck";
 import { SymmetryChecker } from "./symmetry";
 
@@ -58,7 +58,7 @@ export class CsetGame {
         this.hand.splice(index, 1);
       });
 
-    this.deck.discard(cardsToDiscard);
+    this.deck.discard(cardsToDiscard as Card[]);
 
     const newCards = this.deck.draw(cardIndices.length);
     this.hand.push(...newCards);
